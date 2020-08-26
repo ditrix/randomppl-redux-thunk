@@ -21,9 +21,11 @@ export const actionLoadDataError = () => {
 }
 
 
+// функция экшн криетор
 export const loadData = () => {
-	actionLoadData()
-	return dispatch => { 	
+	
+	return dispatch => { 	    //  диспатчим в стор функцию
+  	 dispatch(actionLoadData())	
   	 axios('https://api.randomuser.me/?results=5')
       .then(response => dispatch(actionLoadDataSuccess(response.data.results))) 
       .catch(error => dispatch(actionLoadDataError()))

@@ -20,7 +20,7 @@ class App extends Component {
   render(){
        return (
         <div className="App">
-           <h1>randomppl redux</h1>
+           <h1>randomppl redux-thunk</h1>
            {(this.props.loading)?<span>loading...</span>
              :(this.props.error)?<span>error load data</span>
                :<ul>{this.props.data.map((item,index) => <li key={index}>{Person(item)}</li> )}</ul>
